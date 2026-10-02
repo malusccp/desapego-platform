@@ -1,0 +1,20 @@
+# --- Web framework / servidor ---
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.32,<1.0
+python-multipart>=0.0.18        # necessário para OAuth2PasswordRequestForm (login via form)
+
+# --- Banco de dados ---
+SQLAlchemy>=2.0.36,<2.1
+
+# --- Validação / configuração ---
+pydantic>=2.12,<3.0             # 2.12+ tem suporte a Python 3.14
+pydantic-settings>=2.6,<3.0
+email-validator>=2.2,<3.0       # necessário para EmailStr
+
+# --- Autenticação ---
+PyJWT>=2.10,<3.0                # python-jose está sem manutenção
+bcrypt>=4.2,<6.0                # usado direto; passlib está sem manutenção e quebra com bcrypt>=4.1
+
+# --- Desenvolvimento / testes ---
+pytest>=8.3
+httpx2                          # usado pelo TestClient do FastAPI/Starlette (substitui httpx)
